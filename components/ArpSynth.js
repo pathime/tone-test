@@ -51,8 +51,6 @@ class ArpSynth extends React.Component {
       this.freeverb.wet.value = 0
       this.synth = new PolySynth(3, FMSynth).connect(this.freeverb)
       this.synth.set(synthOpts)
-
-      // console.log(this.synth.envelope)
     }) 
   }
 
