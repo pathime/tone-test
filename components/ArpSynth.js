@@ -51,6 +51,8 @@ class ArpSynth extends React.Component {
       this.freeverb.wet.value = 0
       this.synth = new PolySynth(3, FMSynth).connect(this.freeverb)
       this.synth.set(synthOpts)
+
+      // console.log(this.synth.envelope)
     }) 
   }
 
@@ -81,7 +83,7 @@ class ArpSynth extends React.Component {
     let { envelope } = synthOpts
     envelope.release = (value / 100) * 3.2 + 1
     envelope.decay = (value / 100) * 2 + 0.2
-    this.synth.set(synthOpts)
+    this.synth.set({envelope})
   }
 
   trigger() {
